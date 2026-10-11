@@ -1,0 +1,325 @@
+{
+  "scope": "Retrospective profiling of saved 202506-202511 assignments; observed financial months 202509-202511 only. Not prospective treatment effects.",
+  "source_version": "Related FINAL 90-cell notebook; saved blend F1 0.7770, distinct from submitted 86-cell notebook F1 0.7793.",
+  "unit": "Unique corporation; average of actually observed months per corporation. No missing-month zero fill.",
+  "period": [
+    202509,
+    202510,
+    202511
+  ],
+  "groups": [
+    {
+      "cluster": 0,
+      "name": "거래규모 변동성형",
+      "assigned_corps": 1817,
+      "financially_observed_corps": 1817,
+      "complete_three_month_corps": 1791,
+      "saved_proxy_rate": 0.3768115942028986,
+      "saved_score": 0.45407679418436986,
+      "saved_imputed_fraction": 0.0023848835076132812,
+      "mean_index_vs_stable": {
+        "deposit": 0.21578767440305763,
+        "loan": 0.5039632976029034,
+        "transactions": 0.10852197847561156,
+        "digital": 0.12666716272380643,
+        "cards": 0.4059237935736782,
+        "transfer": 0.06694720291867498
+      },
+      "median_index_vs_stable": {
+        "deposit": 0.12027821542481648,
+        "loan": 0.4738955823293172,
+        "transactions": 0.13838187702265373,
+        "digital": 0.12772727272727272,
+        "cards": 0.30869565217391304,
+        "transfer": 0.21788617886178863
+      },
+      "share_of_observed_value": {
+        "deposit": 0.1867198135419346,
+        "loan": 0.3156830595593673,
+        "transactions": 0.10210019475291959,
+        "digital": 0.11842512885836043,
+        "cards": 0.2875963251303133,
+        "transfer": 0.06437710726517229
+      },
+      "mean_digital_share": 0.6561153378921728,
+      "mean_transfer_share": 0.24224441781577763,
+      "positive_transactions_corps": 1810,
+      "card_users_fraction": 0.7958172812328013,
+      "top_decile_deposit_share": 0.7706318476239463
+    },
+    {
+      "cluster": 1,
+      "name": "안정 거래형",
+      "assigned_corps": 1391,
+      "financially_observed_corps": 1391,
+      "complete_three_month_corps": 1367,
+      "saved_proxy_rate": 0.061226935058710755,
+      "saved_score": 0.08620626920445723,
+      "saved_imputed_fraction": 0.002875629043853342,
+      "mean_index_vs_stable": {
+        "deposit": 1.0,
+        "loan": 1.0,
+        "transactions": 1.0,
+        "digital": 1.0,
+        "cards": 1.0,
+        "transfer": 1.0
+      },
+      "median_index_vs_stable": {
+        "deposit": 1.0,
+        "loan": 1.0,
+        "transactions": 1.0,
+        "digital": 1.0,
+        "cards": 1.0,
+        "transfer": 1.0
+      },
+      "share_of_observed_value": {
+        "deposit": 0.662423869364835,
+        "loan": 0.47953970384790073,
+        "transactions": 0.720246357073793,
+        "digital": 0.7157346223882245,
+        "cards": 0.5423891914377326,
+        "transfer": 0.7361583187323306
+      },
+      "mean_digital_share": 0.7493331932846045,
+      "mean_transfer_share": 0.1482356527578917,
+      "positive_transactions_corps": 1379,
+      "card_users_fraction": 0.9367361610352265,
+      "top_decile_deposit_share": 0.6761031434141478
+    },
+    {
+      "cluster": 2,
+      "name": "디지털·자동이체 변동형",
+      "assigned_corps": 1299,
+      "financially_observed_corps": 1296,
+      "complete_three_month_corps": 1052,
+      "saved_proxy_rate": 0.7926610212984346,
+      "saved_score": 0.8096842047498075,
+      "saved_imputed_fraction": 0.07826533230690273,
+      "mean_index_vs_stable": {
+        "deposit": 0.2444272694704515,
+        "loan": 0.4583310034480425,
+        "transactions": 0.26473703435245965,
+        "digital": 0.24869098531967918,
+        "cards": 0.33643178687367575,
+        "transfer": 0.29081491621348304
+      },
+      "median_index_vs_stable": {
+        "deposit": 0.019213772432079314,
+        "loan": 0.3493975903614458,
+        "transactions": 0.014831715210355988,
+        "digital": 0.00034545454545454544,
+        "cards": 0.0,
+        "transfer": 0.07422764227642276
+      },
+      "share_of_observed_value": {
+        "deposit": 0.15085631709323033,
+        "loan": 0.20477723659273184,
+        "transactions": 0.17765344817328738,
+        "digital": 0.16584024875341505,
+        "cards": 0.1700144834319543,
+        "transfer": 0.1994645740024972
+      },
+      "mean_digital_share": 0.30360986355342495,
+      "mean_transfer_share": 0.5752373149087001,
+      "positive_transactions_corps": 1270,
+      "card_users_fraction": 0.4791666666666667,
+      "top_decile_deposit_share": 0.9090864898481524
+    }
+  ],
+  "complete_three_month_sensitivity": [
+    {
+      "cluster": 0,
+      "name": "거래규모 변동성형",
+      "assigned_corps": 1791,
+      "financially_observed_corps": 1791,
+      "complete_three_month_corps": 1791,
+      "saved_proxy_rate": 0.3748371487064955,
+      "saved_score": 0.45414721390452256,
+      "saved_imputed_fraction": 0.0,
+      "mean_index_vs_stable": {
+        "deposit": 0.21663701462305435,
+        "loan": 0.5042553565067963,
+        "transactions": 0.10888088896514396,
+        "digital": 0.12858424642859287,
+        "cards": 0.40801815627194493,
+        "transfer": 0.06822826529615444
+      },
+      "median_index_vs_stable": {
+        "deposit": 0.12123552123552124,
+        "loan": 0.4816326530612245,
+        "transactions": 0.13733821414563996,
+        "digital": 0.12486328837039737,
+        "cards": 0.30054644808743164,
+        "transfer": 0.22166666666666662
+      },
+      "share_of_observed_value": {
+        "deposit": 0.19717641958301887,
+        "loan": 0.3346151443725549,
+        "transactions": 0.11055278490583145,
+        "digital": 0.1289145147330338,
+        "cards": 0.29913312071183534,
+        "transfer": 0.07309184117297866
+      },
+      "mean_digital_share": 0.6556344440778887,
+      "mean_transfer_share": 0.24362197929801288,
+      "positive_transactions_corps": 1785,
+      "card_users_fraction": 0.7934115019542155,
+      "top_decile_deposit_share": 0.7725383764495924
+    },
+    {
+      "cluster": 1,
+      "name": "안정 거래형",
+      "assigned_corps": 1367,
+      "financially_observed_corps": 1367,
+      "complete_three_month_corps": 1367,
+      "saved_proxy_rate": 0.05388929529383077,
+      "saved_score": 0.08180316045603513,
+      "saved_imputed_fraction": 0.0,
+      "mean_index_vs_stable": {
+        "deposit": 1.0,
+        "loan": 1.0,
+        "transactions": 1.0,
+        "digital": 1.0,
+        "cards": 1.0,
+        "transfer": 1.0
+      },
+      "median_index_vs_stable": {
+        "deposit": 1.0,
+        "loan": 1.0,
+        "transactions": 1.0,
+        "digital": 1.0,
+        "cards": 1.0,
+        "transfer": 1.0
+      },
+      "share_of_observed_value": {
+        "deposit": 0.6946967109813186,
+        "loan": 0.5064866483862726,
+        "transactions": 0.7749808265086272,
+        "digital": 0.7652211814433404,
+        "cards": 0.5595745336620926,
+        "transfer": 0.8176689402519283
+      },
+      "mean_digital_share": 0.7509230114225954,
+      "mean_transfer_share": 0.14733022497557086,
+      "positive_transactions_corps": 1355,
+      "card_users_fraction": 0.9356254572055597,
+      "top_decile_deposit_share": 0.6782875302871202
+    },
+    {
+      "cluster": 2,
+      "name": "디지털·자동이체 변동형",
+      "assigned_corps": 1052,
+      "financially_observed_corps": 1052,
+      "complete_three_month_corps": 1052,
+      "saved_proxy_rate": 0.778041825095057,
+      "saved_score": 0.8061900831653992,
+      "saved_imputed_fraction": 0.04039923954372622,
+      "mean_index_vs_stable": {
+        "deposit": 0.20225122521556144,
+        "loan": 0.40766532290129515,
+        "transactions": 0.19192864527861542,
+        "digital": 0.17976922153505664,
+        "cards": 0.3281054681390545,
+        "transfer": 0.17360165394940402
+      },
+      "median_index_vs_stable": {
+        "deposit": 0.015617760617760617,
+        "loan": 0.3153061224489796,
+        "transactions": 0.010645182376781281,
+        "digital": 0.0,
+        "cards": 0.0,
+        "transfer": 0.065
+      },
+      "share_of_observed_value": {
+        "deposit": 0.10812686943566238,
+        "loan": 0.1588982072411726,
+        "transactions": 0.11446638858554135,
+        "digital": 0.1058643038236257,
+        "cards": 0.14129234562607204,
+        "transfer": 0.10923921857509312
+      },
+      "mean_digital_share": 0.2627593796954657,
+      "mean_transfer_share": 0.6174999636043078,
+      "positive_transactions_corps": 1034,
+      "card_users_fraction": 0.44961977186311786,
+      "top_decile_deposit_share": 0.9185326730908604
+    }
+  ],
+  "monetary_units": "Original currency scale not independently established; publish only dimensionless indices and shares, never assume KRW.",
+  "assumptions": {
+    "incremental_margin_krw": 1000000,
+    "contact_cost_krw": 20000,
+    "fixed_cost_per_separate_campaign_krw": 5000000,
+    "uplift_rates": [
+      0.01,
+      0.03,
+      0.05
+    ],
+    "label": "HYPOTHETICAL equal economics across groups; no estimated uplift or profitability"
+  },
+  "hypothetical_group_campaigns": [
+    {
+      "cluster": 0,
+      "n": 1817,
+      "cost_krw": 41340000,
+      "break_even_uplift": 0.02275178866263071,
+      "break_even_margin_at_3pp_krw": 758392.9554210237,
+      "scenarios": [
+        {
+          "uplift": 0.01,
+          "net_benefit_krw": -23170000.0
+        },
+        {
+          "uplift": 0.03,
+          "net_benefit_krw": 13170000.0
+        },
+        {
+          "uplift": 0.05,
+          "net_benefit_krw": 49510000.000000015
+        }
+      ]
+    },
+    {
+      "cluster": 1,
+      "n": 1391,
+      "cost_krw": 32820000,
+      "break_even_uplift": 0.023594536304816678,
+      "break_even_margin_at_3pp_krw": 786484.5434938894,
+      "scenarios": [
+        {
+          "uplift": 0.01,
+          "net_benefit_krw": -18910000.0
+        },
+        {
+          "uplift": 0.03,
+          "net_benefit_krw": 8910000.0
+        },
+        {
+          "uplift": 0.05,
+          "net_benefit_krw": 36730000.0
+        }
+      ]
+    },
+    {
+      "cluster": 2,
+      "n": 1299,
+      "cost_krw": 30980000,
+      "break_even_uplift": 0.02384911470361817,
+      "break_even_margin_at_3pp_krw": 794970.4901206056,
+      "scenarios": [
+        {
+          "uplift": 0.01,
+          "net_benefit_krw": -17990000.0
+        },
+        {
+          "uplift": 0.03,
+          "net_benefit_krw": 7990000.0
+        },
+        {
+          "uplift": 0.05,
+          "net_benefit_krw": 33970000.0
+        }
+      ]
+    }
+  ]
+}

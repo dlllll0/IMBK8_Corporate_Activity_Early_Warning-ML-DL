@@ -1,0 +1,136 @@
+{
+  "method": "Direct standardization to pooled industry x past-size distribution on common support",
+  "past_size": "202501-202505 mean(deposit+loan), at least 3 observed months; last past industry; within-industry quintiles",
+  "outcome": "202509-202511 mean, all three months observed; unique corporations",
+  "support_rule": "At least 20 corporations from each of the 3 personas in every retained stratum",
+  "candidate_strata": 20,
+  "retained_strata": 12,
+  "eligible_corps": 4206,
+  "common_support_corps": 3193,
+  "eligible_unadjusted_indices": {
+    "0": {
+      "deposit": 0.21674317867360715,
+      "loan": 0.504469883504881,
+      "transactions": 0.10885624825235161
+    },
+    "1": {
+      "deposit": 1.0,
+      "loan": 1.0,
+      "transactions": 1.0
+    },
+    "2": {
+      "deposit": 0.2027922796618108,
+      "loan": 0.3982370142284353,
+      "transactions": 0.1898110847353745
+    }
+  },
+  "common_support_unadjusted_indices": {
+    "0": {
+      "deposit": 0.2379347835466629,
+      "loan": 0.4388509961313936,
+      "transactions": 0.12160729413903487
+    },
+    "1": {
+      "deposit": 1.0,
+      "loan": 1.0,
+      "transactions": 1.0
+    },
+    "2": {
+      "deposit": 0.24625455933210635,
+      "loan": 0.38354040798603845,
+      "transactions": 0.24058199760965387
+    }
+  },
+  "groups": [
+    {
+      "cluster": 2,
+      "name": "디지털·자동이체 변동형",
+      "original_assigned": 1299,
+      "eligible_complete": 1049,
+      "common_support": 760,
+      "standardized_mean_index_vs_stable": {
+        "deposit": 0.622373778134175,
+        "loan": 1.0321894465762644,
+        "transactions": 0.5897199256117459
+      },
+      "bootstrap_percentile95": {
+        "deposit": [
+          0.4151191097487619,
+          0.8816074953434716
+        ],
+        "loan": [
+          0.8135527663442983,
+          1.2994305294268624
+        ],
+        "transactions": [
+          0.2900361680928018,
+          1.0295049351306855
+        ]
+      }
+    },
+    {
+      "cluster": 0,
+      "name": "거래규모 변동성형",
+      "original_assigned": 1817,
+      "eligible_complete": 1790,
+      "common_support": 1190,
+      "standardized_mean_index_vs_stable": {
+        "deposit": 0.442058024228801,
+        "loan": 0.9358991067678532,
+        "transactions": 0.20787455846693162
+      },
+      "bootstrap_percentile95": {
+        "deposit": [
+          0.2913183473310739,
+          0.6438278815574022
+        ],
+        "loan": [
+          0.7800463989271131,
+          1.1074154047139155
+        ],
+        "transactions": [
+          0.14196507754180804,
+          0.3120257796378028
+        ]
+      }
+    },
+    {
+      "cluster": 1,
+      "name": "안정 거래형",
+      "original_assigned": 1391,
+      "eligible_complete": 1367,
+      "common_support": 1243,
+      "standardized_mean_index_vs_stable": {
+        "deposit": 1.0,
+        "loan": 1.0,
+        "transactions": 1.0
+      },
+      "bootstrap_percentile95": {
+        "deposit": [
+          1.0,
+          1.0
+        ],
+        "loan": [
+          1.0,
+          1.0
+        ],
+        "transactions": [
+          1.0,
+          1.0
+        ]
+      }
+    }
+  ],
+  "bootstrap": {
+    "resamples": 300,
+    "unit": "corporation, within persona and stratum",
+    "fixed_strata_and_weights": true
+  },
+  "scope": "Descriptive adjusted association; overlapping assignment/outcome periods; not causal, prospective, profit or intervention validation",
+  "limitations": [
+    "Balances are size proxies, not assets or profit",
+    "Unobserved confounding and within-bin size differences remain",
+    "Common support exclusions restrict generalization",
+    "Heavy-tailed amounts; bootstrap intervals are exploratory"
+  ]
+}

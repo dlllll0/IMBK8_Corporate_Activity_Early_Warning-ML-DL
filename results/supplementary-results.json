@@ -1,0 +1,239 @@
+{
+  "raw_rows": 365988,
+  "raw_columns": 70,
+  "raw_corps": 15473,
+  "selected_corps": 5723,
+  "top4_corps": 4507,
+  "imputed_rows": 5077,
+  "test_rows": 13521,
+  "test_positive": 5458,
+  "cv_global": 0.2842631881824516,
+  "cv_through_last_training_target": 0.28305187528632997,
+  "changed_test_labels": 31,
+  "frozen_test_positive": 5489,
+  "persistence": {
+    "confusion_matrix": [
+      [
+        7510,
+        553
+      ],
+      [
+        614,
+        4844
+      ]
+    ],
+    "precision": 0.8975356679636836,
+    "recall": 0.8875045804323928,
+    "f1": 0.892491939198526,
+    "flagged": 5397
+  },
+  "known_decline": {
+    "confusion_matrix": [
+      [
+        8063,
+        0
+      ],
+      [
+        4203,
+        1255
+      ]
+    ],
+    "precision": 1.0,
+    "recall": 0.22993770611945769,
+    "f1": 0.3739013853716669,
+    "flagged": 1255
+  },
+  "target_imputed_rows": 221,
+  "input_window_imputed_rows": 1634,
+  "monthly": [
+    {
+      "month": 202509,
+      "n": 4507,
+      "positive": 1788,
+      "persistence": {
+        "confusion_matrix": [
+          [
+            2537,
+            182
+          ],
+          [
+            194,
+            1594
+          ]
+        ],
+        "precision": 0.8975225225225225,
+        "recall": 0.8914988814317674,
+        "f1": 0.8945005611672279,
+        "flagged": 1776
+      },
+      "known_decline": {
+        "confusion_matrix": [
+          [
+            2719,
+            0
+          ],
+          [
+            1374,
+            414
+          ]
+        ],
+        "precision": 1.0,
+        "recall": 0.23154362416107382,
+        "f1": 0.3760217983651226,
+        "flagged": 414
+      }
+    },
+    {
+      "month": 202510,
+      "n": 4507,
+      "positive": 1833,
+      "persistence": {
+        "confusion_matrix": [
+          [
+            2487,
+            187
+          ],
+          [
+            232,
+            1601
+          ]
+        ],
+        "precision": 0.895413870246085,
+        "recall": 0.8734315330060011,
+        "f1": 0.884286108809721,
+        "flagged": 1788
+      },
+      "known_decline": {
+        "confusion_matrix": [
+          [
+            2674,
+            0
+          ],
+          [
+            1397,
+            436
+          ]
+        ],
+        "precision": 1.0,
+        "recall": 0.23786142935079105,
+        "f1": 0.3843102688408991,
+        "flagged": 436
+      }
+    },
+    {
+      "month": 202511,
+      "n": 4507,
+      "positive": 1837,
+      "persistence": {
+        "confusion_matrix": [
+          [
+            2486,
+            184
+          ],
+          [
+            188,
+            1649
+          ]
+        ],
+        "precision": 0.8996181123840699,
+        "recall": 0.8976592270005443,
+        "f1": 0.8986376021798365,
+        "flagged": 1833
+      },
+      "known_decline": {
+        "confusion_matrix": [
+          [
+            2670,
+            0
+          ],
+          [
+            1432,
+            405
+          ]
+        ],
+        "precision": 1.0,
+        "recall": 0.22046815459989114,
+        "f1": 0.36128456735057984,
+        "flagged": 405
+      }
+    }
+  ],
+  "frozen_persistence": {
+    "confusion_matrix": [
+      [
+        7492,
+        540
+      ],
+      [
+        598,
+        4891
+      ]
+    ],
+    "precision": 0.9005707972749033,
+    "recall": 0.8910548369466205,
+    "f1": 0.8957875457875458,
+    "flagged": 5431
+  },
+  "frozen_rule_against_original_target": {
+    "confusion_matrix": [
+      [
+        7499,
+        564
+      ],
+      [
+        591,
+        4867
+      ]
+    ],
+    "precision": 0.8961517215982324,
+    "recall": 0.8917185782337853,
+    "f1": 0.8939296537790431,
+    "flagged": 5431
+  },
+  "clean_windows": {
+    "n": 11756,
+    "positive": 3845,
+    "positive_rate": 0.3270670296019054,
+    "persistence": {
+      "confusion_matrix": [
+        [
+          7503,
+          408
+        ],
+        [
+          532,
+          3313
+        ]
+      ],
+      "precision": 0.8903520558989519,
+      "recall": 0.8616384915474642,
+      "f1": 0.8757599788527624,
+      "flagged": 3721
+    }
+  },
+  "imputed_exposure": {
+    "n": 1765,
+    "positive": 1613,
+    "positive_rate": 0.9138810198300283,
+    "persistence": {
+      "confusion_matrix": [
+        [
+          7,
+          145
+        ],
+        [
+          82,
+          1531
+        ]
+      ],
+      "precision": 0.9134844868735084,
+      "recall": 0.949163050216987,
+      "f1": 0.930982061416844,
+      "flagged": 1676
+    }
+  },
+  "all_industries_model_rows": 165967,
+  "all_industries_rerun_positive": 64270,
+  "all_industries_saved_positive": 64272,
+  "comparison_scope": "Aggregate-aligned comparison, not paired replication: full-period all-industry positives differ by 2; original row-level predictions unavailable."
+}

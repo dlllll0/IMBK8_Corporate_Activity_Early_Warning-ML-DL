@@ -1,0 +1,66 @@
+{
+  "provenance": "Original notebook cell 34 saved outputs; not retrained. PR_AUC in source uses average_precision_score.",
+  "unit": "corporation-month; 4507 corporations repeated for 3 months",
+  "models": [
+    {
+      "name": "업종 라우팅",
+      "roc_auc": 0.8956,
+      "average_precision": 0.8628,
+      "f1": 0.7729,
+      "recall": 0.801,
+      "precision": 0.7467,
+      "accuracy": 0.81,
+      "threshold": 0.497,
+      "confusion_matrix": [
+        [
+          6580,
+          1483
+        ],
+        [
+          1086,
+          4372
+        ]
+      ]
+    },
+    {
+      "name": "통합",
+      "roc_auc": 0.8957,
+      "average_precision": 0.8634,
+      "f1": 0.7695,
+      "recall": 0.8045,
+      "precision": 0.7374,
+      "accuracy": 0.8054,
+      "threshold": 0.523,
+      "confusion_matrix": [
+        [
+          6499,
+          1564
+        ],
+        [
+          1067,
+          4391
+        ]
+      ]
+    },
+    {
+      "name": "블렌딩",
+      "roc_auc": 0.8995,
+      "average_precision": 0.8684,
+      "f1": 0.7793,
+      "recall": 0.8177,
+      "precision": 0.7443,
+      "accuracy": 0.813,
+      "threshold": 0.498,
+      "confusion_matrix": [
+        [
+          6530,
+          1533
+        ],
+        [
+          995,
+          4463
+        ]
+      ]
+    }
+  ]
+}

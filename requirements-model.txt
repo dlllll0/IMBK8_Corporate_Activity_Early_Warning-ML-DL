@@ -1,0 +1,5 @@
+-r requirements.txt
+lightgbm
+shap
+ipython
+jupyterlab

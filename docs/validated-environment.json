@@ -1,0 +1,17 @@
+{
+  "scope": "Supplementary analyses and newly trained internal-data revalidation; not original full pipeline replay",
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "lightgbm": "4.7.0"
+  },
+  "not_executed": [
+    "Original external-index full pipeline replay",
+    "SHAP/KMeans retraining in this review",
+    "KoBERT inference"
+  ]
+}

@@ -1,0 +1,772 @@
+{
+  "experiment": "Past-only internal-data revalidation; NOT historical exact reproduction",
+  "protocol": "work/project4-revalidation-protocol.md (private review copy)",
+  "cohort": {
+    "cutoff": 202505,
+    "corporations": 5182,
+    "test_corporations": 4189,
+    "selection": "Original missing-profile rule fitted only through May 2025; established top4 industries"
+  },
+  "label": {
+    "cv_cutoff": 0.23119691484116883,
+    "cv_fit_through": 202505,
+    "definition": "Original OR proxy with -30% decline, no missing-month zero imputation",
+    "required_observation_window": "t-6 through t+1, 8 observed months for paired current/next state"
+  },
+  "availability": "Train target through June 2025 available at first validation June month-end; last validation target September available at first test September month-end.",
+  "coverage": {
+    "train": {
+      "candidate_rows": 119186,
+      "evaluated_rows": 97931,
+      "excluded_rows": 21255
+    },
+    "validation": {
+      "candidate_rows": 15546,
+      "evaluated_rows": 12375,
+      "excluded_rows": 3171
+    },
+    "test": {
+      "candidate_rows": 15546,
+      "evaluated_rows": 11953,
+      "excluded_rows": 3593
+    }
+  },
+  "feature_count": {
+    "numeric": 104,
+    "categorical": 27,
+    "extra_state_history": 7
+  },
+  "parameters": {
+    "n_estimators": 500,
+    "learning_rate": 0.05,
+    "max_depth": 6,
+    "num_leaves": 31,
+    "random_state": 42,
+    "n_jobs": 4,
+    "verbosity": -1,
+    "deterministic": true
+  },
+  "changes": [
+    "Past-only cohort selection",
+    "CV cutoff fixed before validation",
+    "Missing month labels excluded rather than zero-filled",
+    "Causal internal features; no external indicators with unknown publication times",
+    "No whole-period preprocessing fits",
+    "LightGBM native numeric missing; train-fit categorical encoding"
+  ],
+  "results": {
+    "persistence": {
+      "n": 11953,
+      "positive": 5114,
+      "f1": 0.9110650478728655,
+      "precision": 0.9198724337253339,
+      "recall": 0.902424716464607,
+      "confusion_matrix": [
+        [
+          6437,
+          402
+        ],
+        [
+          499,
+          4615
+        ]
+      ],
+      "flagged": 5017,
+      "current_state_0": {
+        "n": 6936,
+        "positive": 499,
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "confusion_matrix": [
+          [
+            6437,
+            0
+          ],
+          [
+            499,
+            0
+          ]
+        ],
+        "flagged": 0
+      },
+      "current_state_1": {
+        "n": 5017,
+        "positive": 4615,
+        "f1": 0.958264119601329,
+        "precision": 0.9198724337253339,
+        "recall": 1.0,
+        "confusion_matrix": [
+          [
+            0,
+            402
+          ],
+          [
+            0,
+            4615
+          ]
+        ],
+        "flagged": 5017
+      }
+    },
+    "integrated": {
+      "n": 11953,
+      "positive": 5114,
+      "f1": 0.7578627591136526,
+      "precision": 0.6977624218492925,
+      "recall": 0.829292139225655,
+      "confusion_matrix": [
+        [
+          5002,
+          1837
+        ],
+        [
+          873,
+          4241
+        ]
+      ],
+      "flagged": 6078,
+      "roc_auc": 0.8694556050688833,
+      "average_precision": 0.817709831769792,
+      "validation_threshold": 0.37210057822804743,
+      "current_state_0": {
+        "n": 6936,
+        "positive": 499,
+        "f1": 0.2711722987067167,
+        "precision": 0.17123287671232876,
+        "recall": 0.6513026052104208,
+        "confusion_matrix": [
+          [
+            4864,
+            1573
+          ],
+          [
+            174,
+            325
+          ]
+        ],
+        "flagged": 1898
+      },
+      "current_state_1": {
+        "n": 5017,
+        "positive": 4615,
+        "f1": 0.8905059693007391,
+        "precision": 0.9368421052631579,
+        "recall": 0.8485373781148429,
+        "confusion_matrix": [
+          [
+            138,
+            264
+          ],
+          [
+            699,
+            3916
+          ]
+        ],
+        "flagged": 4180
+      }
+    },
+    "routed": {
+      "n": 11953,
+      "positive": 5114,
+      "f1": 0.7689369828134945,
+      "precision": 0.7186809450960394,
+      "recall": 0.8267500977708252,
+      "confusion_matrix": [
+        [
+          5184,
+          1655
+        ],
+        [
+          886,
+          4228
+        ]
+      ],
+      "flagged": 5883,
+      "roc_auc": 0.8734486118887379,
+      "average_precision": 0.8186237781374538,
+      "validation_threshold": 0.3744741974500453,
+      "current_state_0": {
+        "n": 6936,
+        "positive": 499,
+        "f1": 0.2786660575605299,
+        "precision": 0.1804733727810651,
+        "recall": 0.6112224448897795,
+        "confusion_matrix": [
+          [
+            5052,
+            1385
+          ],
+          [
+            194,
+            305
+          ]
+        ],
+        "flagged": 1690
+      },
+      "current_state_1": {
+        "n": 5017,
+        "positive": 4615,
+        "f1": 0.8907811080835604,
+        "precision": 0.9356069639875984,
+        "recall": 0.8500541711809317,
+        "confusion_matrix": [
+          [
+            132,
+            270
+          ],
+          [
+            692,
+            3923
+          ]
+        ],
+        "flagged": 4193
+      }
+    },
+    "blend": {
+      "n": 11953,
+      "positive": 5114,
+      "f1": 0.7688573226647487,
+      "precision": 0.7115992677650191,
+      "recall": 0.8361360969886585,
+      "confusion_matrix": [
+        [
+          5106,
+          1733
+        ],
+        [
+          838,
+          4276
+        ]
+      ],
+      "flagged": 6009,
+      "roc_auc": 0.8755496767572715,
+      "average_precision": 0.8250306536703897,
+      "validation_threshold": 0.3725934274907346,
+      "current_state_0": {
+        "n": 6936,
+        "positive": 499,
+        "f1": 0.2773146116717859,
+        "precision": 0.17752808988764046,
+        "recall": 0.6332665330661322,
+        "confusion_matrix": [
+          [
+            4973,
+            1464
+          ],
+          [
+            183,
+            316
+          ]
+        ],
+        "flagged": 1780
+      },
+      "current_state_1": {
+        "n": 5017,
+        "positive": 4615,
+        "f1": 0.8955223880597015,
+        "precision": 0.9363915819342634,
+        "recall": 0.8580715059588299,
+        "confusion_matrix": [
+          [
+            133,
+            269
+          ],
+          [
+            655,
+            3960
+          ]
+        ],
+        "flagged": 4229
+      }
+    },
+    "with_state_history": {
+      "n": 11953,
+      "positive": 5114,
+      "f1": 0.9131625268922354,
+      "precision": 0.9133411580594679,
+      "recall": 0.9129839655846695,
+      "confusion_matrix": [
+        [
+          6396,
+          443
+        ],
+        [
+          445,
+          4669
+        ]
+      ],
+      "flagged": 5112,
+      "roc_auc": 0.9747041042245289,
+      "average_precision": 0.9688139500315693,
+      "validation_threshold": 0.38651831604445896,
+      "current_state_0": {
+        "n": 6936,
+        "positive": 499,
+        "f1": 0.2336874051593323,
+        "precision": 0.48125,
+        "recall": 0.15430861723446893,
+        "confusion_matrix": [
+          [
+            6354,
+            83
+          ],
+          [
+            422,
+            77
+          ]
+        ],
+        "flagged": 160
+      },
+      "current_state_1": {
+        "n": 5017,
+        "positive": 4615,
+        "f1": 0.9599665516880945,
+        "precision": 0.9273021001615509,
+        "recall": 0.9950162513542795,
+        "confusion_matrix": [
+          [
+            42,
+            360
+          ],
+          [
+            23,
+            4592
+          ]
+        ],
+        "flagged": 4952
+      }
+    }
+  },
+  "monthly": [
+    {
+      "month": 202509,
+      "n": 3997,
+      "positive": 1683,
+      "metrics": {
+        "persistence": {
+          "n": 3997,
+          "positive": 1683,
+          "f1": 0.9187089061566049,
+          "precision": 0.9242333132892363,
+          "recall": 0.9132501485442662,
+          "confusion_matrix": [
+            [
+              2188,
+              126
+            ],
+            [
+              146,
+              1537
+            ]
+          ],
+          "flagged": 1663
+        },
+        "integrated": {
+          "n": 3997,
+          "positive": 1683,
+          "f1": 0.7542395693135936,
+          "precision": 0.6894685039370079,
+          "recall": 0.8324420677361853,
+          "confusion_matrix": [
+            [
+              1683,
+              631
+            ],
+            [
+              282,
+              1401
+            ]
+          ],
+          "flagged": 2032
+        },
+        "routed": {
+          "n": 3997,
+          "positive": 1683,
+          "f1": 0.7724137931034483,
+          "precision": 0.7209062821833162,
+          "recall": 0.8318478906714201,
+          "confusion_matrix": [
+            [
+              1772,
+              542
+            ],
+            [
+              283,
+              1400
+            ]
+          ],
+          "flagged": 1942
+        },
+        "blend": {
+          "n": 3997,
+          "positive": 1683,
+          "f1": 0.7694814010317675,
+          "precision": 0.7085,
+          "recall": 0.8419489007724302,
+          "confusion_matrix": [
+            [
+              1731,
+              583
+            ],
+            [
+              266,
+              1417
+            ]
+          ],
+          "flagged": 2000
+        },
+        "with_state_history": {
+          "n": 3997,
+          "positive": 1683,
+          "f1": 0.9215279834172342,
+          "precision": 0.9185360094451004,
+          "recall": 0.9245395127748068,
+          "confusion_matrix": [
+            [
+              2176,
+              138
+            ],
+            [
+              127,
+              1556
+            ]
+          ],
+          "flagged": 1694
+        }
+      },
+      "top500": {
+        "integrated": {
+          "k": 500,
+          "expected_true_positive": 453.0,
+          "precision": 0.906,
+          "recall": 0.26916221033868093
+        },
+        "routed": {
+          "k": 500,
+          "expected_true_positive": 457.0,
+          "precision": 0.914,
+          "recall": 0.27153891859774215
+        },
+        "blend": {
+          "k": 500,
+          "expected_true_positive": 460.0,
+          "precision": 0.92,
+          "recall": 0.27332144979203804
+        },
+        "with_state_history": {
+          "k": 500,
+          "expected_true_positive": 500.0,
+          "precision": 1.0,
+          "recall": 0.29708853238265004
+        },
+        "persistence_random_tie": {
+          "k": 500,
+          "expected_true_positive": 462.11665664461816,
+          "precision": 0.9242333132892363,
+          "recall": 0.2745791186242532
+        }
+      }
+    },
+    {
+      "month": 202510,
+      "n": 4013,
+      "positive": 1722,
+      "metrics": {
+        "persistence": {
+          "n": 4013,
+          "positive": 1722,
+          "f1": 0.8991522946506869,
+          "precision": 0.9052383755150089,
+          "recall": 0.8931475029036005,
+          "confusion_matrix": [
+            [
+              2130,
+              161
+            ],
+            [
+              184,
+              1538
+            ]
+          ],
+          "flagged": 1699
+        },
+        "integrated": {
+          "n": 4013,
+          "positive": 1722,
+          "f1": 0.7508021390374332,
+          "precision": 0.6957383548067394,
+          "recall": 0.8153310104529616,
+          "confusion_matrix": [
+            [
+              1677,
+              614
+            ],
+            [
+              318,
+              1404
+            ]
+          ],
+          "flagged": 2018
+        },
+        "routed": {
+          "n": 4013,
+          "positive": 1722,
+          "f1": 0.7613112977512869,
+          "precision": 0.7135601828339259,
+          "recall": 0.8159117305458768,
+          "confusion_matrix": [
+            [
+              1727,
+              564
+            ],
+            [
+              317,
+              1405
+            ]
+          ],
+          "flagged": 1969
+        },
+        "blend": {
+          "n": 4013,
+          "positive": 1722,
+          "f1": 0.7629252611840343,
+          "precision": 0.7081054201889607,
+          "recall": 0.826945412311266,
+          "confusion_matrix": [
+            [
+              1704,
+              587
+            ],
+            [
+              298,
+              1424
+            ]
+          ],
+          "flagged": 2011
+        },
+        "with_state_history": {
+          "n": 4013,
+          "positive": 1722,
+          "f1": 0.9031884057971015,
+          "precision": 0.9016203703703703,
+          "recall": 0.9047619047619048,
+          "confusion_matrix": [
+            [
+              2121,
+              170
+            ],
+            [
+              164,
+              1558
+            ]
+          ],
+          "flagged": 1728
+        }
+      },
+      "top500": {
+        "integrated": {
+          "k": 500,
+          "expected_true_positive": 451.0,
+          "precision": 0.902,
+          "recall": 0.2619047619047619
+        },
+        "routed": {
+          "k": 500,
+          "expected_true_positive": 442.0,
+          "precision": 0.884,
+          "recall": 0.25667828106852497
+        },
+        "blend": {
+          "k": 500,
+          "expected_true_positive": 447.0,
+          "precision": 0.894,
+          "recall": 0.259581881533101
+        },
+        "with_state_history": {
+          "k": 500,
+          "expected_true_positive": 499.0,
+          "precision": 0.998,
+          "recall": 0.2897793263646922
+        },
+        "persistence_random_tie": {
+          "k": 500,
+          "expected_true_positive": 452.61918775750445,
+          "precision": 0.9052383755150089,
+          "recall": 0.26284505676974707
+        }
+      }
+    },
+    {
+      "month": 202511,
+      "n": 3943,
+      "positive": 1709,
+      "metrics": {
+        "persistence": {
+          "n": 3943,
+          "positive": 1709,
+          "f1": 0.915576694411415,
+          "precision": 0.9305135951661632,
+          "recall": 0.901111761263897,
+          "confusion_matrix": [
+            [
+              2119,
+              115
+            ],
+            [
+              169,
+              1540
+            ]
+          ],
+          "flagged": 1655
+        },
+        "integrated": {
+          "n": 3943,
+          "positive": 1709,
+          "f1": 0.7685309071447686,
+          "precision": 0.7080867850098619,
+          "recall": 0.8402574605032183,
+          "confusion_matrix": [
+            [
+              1642,
+              592
+            ],
+            [
+              273,
+              1436
+            ]
+          ],
+          "flagged": 2028
+        },
+        "routed": {
+          "n": 3943,
+          "positive": 1709,
+          "f1": 0.7731594675359956,
+          "precision": 0.7216024340770791,
+          "recall": 0.8326506729081334,
+          "confusion_matrix": [
+            [
+              1685,
+              549
+            ],
+            [
+              286,
+              1423
+            ]
+          ],
+          "flagged": 1972
+        },
+        "blend": {
+          "n": 3943,
+          "positive": 1709,
+          "f1": 0.7742109522524953,
+          "precision": 0.7182182182182182,
+          "recall": 0.839672322995904,
+          "confusion_matrix": [
+            [
+              1671,
+              563
+            ],
+            [
+              274,
+              1435
+            ]
+          ],
+          "flagged": 1998
+        },
+        "with_state_history": {
+          "n": 3943,
+          "positive": 1709,
+          "f1": 0.9149749926448956,
+          "precision": 0.9201183431952663,
+          "recall": 0.9098888238736103,
+          "confusion_matrix": [
+            [
+              2099,
+              135
+            ],
+            [
+              154,
+              1555
+            ]
+          ],
+          "flagged": 1690
+        }
+      },
+      "top500": {
+        "integrated": {
+          "k": 500,
+          "expected_true_positive": 446.0,
+          "precision": 0.892,
+          "recall": 0.2609713282621416
+        },
+        "routed": {
+          "k": 500,
+          "expected_true_positive": 453.0,
+          "precision": 0.906,
+          "recall": 0.2650672908133411
+        },
+        "blend": {
+          "k": 500,
+          "expected_true_positive": 449.0,
+          "precision": 0.898,
+          "recall": 0.26272674078408426
+        },
+        "with_state_history": {
+          "k": 500,
+          "expected_true_positive": 500.0,
+          "precision": 1.0,
+          "recall": 0.29256875365710944
+        },
+        "persistence_random_tie": {
+          "k": 500,
+          "expected_true_positive": 465.2567975830816,
+          "precision": 0.9305135951661632,
+          "recall": 0.27223920279876046
+        }
+      }
+    }
+  ],
+  "paired_corporation_bootstrap": {
+    "integrated": {
+      "delta_f1": -0.15320228875921282,
+      "percentile_95": [
+        -0.16418370599401097,
+        -0.1437107640986766
+      ],
+      "resamples": 300
+    },
+    "routed": {
+      "delta_f1": -0.14212806505937092,
+      "percentile_95": [
+        -0.1541519062524762,
+        -0.13203280767979708
+      ],
+      "resamples": 300
+    },
+    "blend": {
+      "delta_f1": -0.14220772520811675,
+      "percentile_95": [
+        -0.1524950749036996,
+        -0.13257468299107705
+      ],
+      "resamples": 300
+    },
+    "with_state_history": {
+      "delta_f1": 0.0020974790193699633,
+      "percentile_95": [
+        -0.0009674541628898053,
+        0.004681065255461855
+      ],
+      "resamples": 300
+    }
+  },
+  "limitations": [
+    "Proxy retains overlapping windows; not actual churn",
+    "Observation-complete target subset may be selective",
+    "Existing long-history corporations only",
+    "No held-out corporation validation",
+    "No measured intervention or profit",
+    "Historical all-period 2-label discrepancy not resolved by this new experiment"
+  ]
+}

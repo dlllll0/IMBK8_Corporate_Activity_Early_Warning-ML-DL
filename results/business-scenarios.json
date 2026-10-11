@@ -1,0 +1,52 @@
+{
+  "status": "HYPOTHETICAL economics, not observed business results",
+  "observed_workload": {
+    "unit": "corporation-month",
+    "months": 3,
+    "blend_alerts": 5996,
+    "persistence_alerts": 5397,
+    "aggregate_difference": 599,
+    "caveat": "Aggregate comparison, not paired replication; no unique customer count."
+  },
+  "assumed_pilot": {
+    "unique_customers": 1000,
+    "follow_up_months": 3,
+    "contact_cost_per_customer_krw": 20000,
+    "fixed_cost_krw": 5000000,
+    "incremental_margin_per_retained_customer_krw": 1000000,
+    "total_cost_krw": 25000000,
+    "margin_definition": "Three-month incremental contribution after variable/funding/risk costs; excludes campaign costs already counted separately."
+  },
+  "scenarios": [
+    {
+      "incremental_retention_rate": 0.01,
+      "expected_incremental_retained_customers": 10.0,
+      "incremental_contribution_krw": 10000000.0,
+      "net_benefit_krw": -15000000.0,
+      "roi": -0.6
+    },
+    {
+      "incremental_retention_rate": 0.03,
+      "expected_incremental_retained_customers": 30.0,
+      "incremental_contribution_krw": 30000000.0,
+      "net_benefit_krw": 5000000.0,
+      "roi": 0.2
+    },
+    {
+      "incremental_retention_rate": 0.05,
+      "expected_incremental_retained_customers": 50.0,
+      "incremental_contribution_krw": 50000000.0,
+      "net_benefit_krw": 25000000.0,
+      "roi": 1.0
+    }
+  ],
+  "break_even_uplift": 0.025,
+  "formula": "N * causal_incremental_retention_rate * incremental_margin - N * contact_cost - fixed_cost",
+  "exclusions": [
+    "Actual churn ground truth",
+    "Measured causal uplift",
+    "Measured bank margins",
+    "Annual extrapolation",
+    "Duplicate benefits across months"
+  ]
+}
